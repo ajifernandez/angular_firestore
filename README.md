@@ -1,3 +1,8 @@
+1. Crear proyecto en firebase
+2. ng new angular-firestore
+3. npm install firebase @angular/fire --save
+
+
 # AngularFirestore
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.4.
