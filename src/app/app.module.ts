@@ -22,7 +22,8 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 
 // Auth service
-import { AuthService } from "./shared/services/auth.service";
+import { AuthService } from "./shared/services/auth/auth.service";
+import { CatsComponent } from './components/cats/cats.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { AuthService } from "./shared/services/auth.service";
     SignUpComponent,
     DashboardComponent,
     ForgotPasswordComponent,
-    VerifyEmailComponent
+    VerifyEmailComponent,
+    CatsComponent
   ],
   imports: [
     BrowserModule,

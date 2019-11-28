@@ -14,12 +14,12 @@
       <div class="sidebar-sticky">
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link active">
+            <a class="nav-link" [routerLink]="['/dashboard']">
               <i class="fas fa-user"></i>User Profile
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/cats']" routerLinkActive="router-link-active">
+            <a class="nav-link active" [routerLink]="['/cats']">
               <i class="fas fa-user"></i>Cats
             </a>
           </li>
@@ -38,26 +38,24 @@
       <div class="inner-adjust">
 
         <div class="pt-3 pb-2 mb-3 border-bottom">
-          <h1 class="h2">User Profile</h1>
+          <h1 class="h2">Cats</h1>
         </div>
         <!-- Show user data when logged in -->
-        <div class="row" *ngIf="authService.userData as user">
+        <div class="media" *ngFor="let cat of cats">
           <div class="col-md-12">
             <div class="media">
-              <img class="align-self-start mr-5 img-thumbnail rounded-circle" src="{{(user.photoURL) ? user.photoURL : '/assets/dummy-user.png'}}"
-                alt="{{user.displayName}}">
-              <div class="media-body">
-                <h1>Hello: <strong>{{(user.displayName) ? user.displayName : 'User'}}</strong></h1>
-                <p>User ID: <strong>{{user.uid}}</strong></p>
-                <p>Email: <strong>{{user.email}}</strong></p>
-                <p>Email Verified: <strong>{{user.emailVerified}}</strong></p>
+              <img class="align-self-start mr-5 img-thumbnail rounded-circle" src="{{(cat.data.url) ? cat.data.url : '/assets/dummy-user.png'}}" alt="{{cat.nombre}}">
+            </div>
+            <div class="media-body">
+              <p>{{cat.data.nombre}}</p>
+              <div class="btn--group">
+                <button class="btn--green btn--s btn1">Editar</button>
+                <button class="btn--red btn--s btn2">Eliminar</button>
               </div>
             </div>
           </div>
         </div>
-
       </div>
     </main>
-
   </div>
 </div>
